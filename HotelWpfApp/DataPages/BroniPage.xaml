@@ -1,4 +1,4 @@
-﻿<Page x:Class="HotelWpfApp.DataPages.DataHotel"
+﻿<Page x:Class="HotelWpfApp.DataPages.BroniPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:HotelWpfApp.DataPages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="DataHotel">
+      Title="BroniPage">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -14,17 +14,17 @@
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
 
-        <DataGrid x:Name="HotelGrid" Grid.Row="0">
+        <DataGrid x:Name="BroniGrid" Grid.Row="0">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Название:" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="Регион:" Binding="{Binding Region.Name}"/>
+                <DataGridTextColumn Header="Название:" />
+                <DataGridTextColumn Header="Регион:" />
             </DataGrid.Columns>
         </DataGrid>
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal"> 
-            <Button x:Name="AddHotelBtn" Click="AddHotelBtn_Click" Content="Добавить"/>
-            <Button x:Name="EditHotelBtn" Click="EditHotelBtn_Click" Content="Изменить"/>
-            <Button x:Name="DeleteHotelBtn" Click="DeleteHotelBtn_Click" Content="Удалить" Background="Red"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button x:Name="AddBroniBtn" Click="AddBroniBtn_Click" Content="Добавить"/>
+            <Button x:Name="EditBroniBtn" Click="EditBroniBtn_Click" Content="Изменить"/>
+            <Button x:Name="DeleteBroniBtn" Click="DeleteBroniBtn_Click" Content="Удалить" Background="Red"/>
         </StackPanel>
     </Grid>
 </Page>

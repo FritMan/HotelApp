@@ -16,26 +16,32 @@ using System.Windows.Shapes;
 namespace HotelWpfApp.DataPages
 {
     /// <summary>
-    /// Логика взаимодействия для DataHotel.xaml
+    /// Логика взаимодействия для BroniPage.xaml
     /// </summary>
-    public partial class DataHotel : Page
+    public partial class BroniPage : Page
     {
-        public DataHotel()
+        public BroniPage()
         {
             InitializeComponent();
         }
 
-        private void AddHotelBtn_Click(object sender, RoutedEventArgs e)
+
+
+
+
+        
+
+        private void AddBroniBtn_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void EditHotelBtn_Click(object sender, RoutedEventArgs e)
+        private void EditBroniBtn_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void DeleteHotelBtn_Click(object sender, RoutedEventArgs e)
+        private void DeleteBroniBtn_Click(object sender, RoutedEventArgs e)
         {
 
         }

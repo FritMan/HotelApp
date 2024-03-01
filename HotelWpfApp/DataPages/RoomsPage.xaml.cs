@@ -24,5 +24,20 @@ namespace HotelWpfApp.DataPages
         {
             InitializeComponent();
         }
+
+        private void AddRoomBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EditRoomBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteRoomBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

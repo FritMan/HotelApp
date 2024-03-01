@@ -9,6 +9,24 @@
       Title="RoomsPage">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <DataGrid x:Name="RoomsGrid">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер:" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Категория:" Binding="{Binding Hotel.Name}"/>
+                <DataGridTextColumn Header="Количество мест:" />
+                <DataGridTextColumn Header="Статус:"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button x:Name="AddRoomBtn" Click="AddRoomBtn_Click" Content="Добавить"/>
+            <Button x:Name="EditRoomBtn" Click="EditRoomBtn_Click" Content="Изменить"/>
+            <Button x:Name="DeleteRoomBtn" Click="DeleteRoomBtn_Click" Content="Удалить" Background="Red"/>
+        </StackPanel>
     </Grid>
 </Page>
