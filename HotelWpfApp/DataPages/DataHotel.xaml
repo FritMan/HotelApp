@@ -14,7 +14,7 @@
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
 
-        <DataGrid x:Name="HotelGrid" Grid.Row="0">
+        <DataGrid x:Name="HotelGrid" Grid.Row="0" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Название:" Binding="{Binding Name}"/>
                 <DataGridTextColumn Header="Регион:" Binding="{Binding Region.Name}"/>

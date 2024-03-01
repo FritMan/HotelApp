@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelWpfApp.DataPages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,7 @@ namespace HotelWpfApp.Pages
 
         private void HotelBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new DataHotel());
         }
 
         private void RoomsBtn_Click(object sender, RoutedEventArgs e)
