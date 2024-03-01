@@ -23,6 +23,7 @@ namespace HotelWpfApp.DataPages
         public DataHotel()
         {
             InitializeComponent();
+           
         }
 
         private void AddHotelBtn_Click(object sender, RoutedEventArgs e)

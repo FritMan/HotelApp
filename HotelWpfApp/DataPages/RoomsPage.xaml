@@ -18,8 +18,8 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Номер:" Binding="{Binding Name}"/>
                 <DataGridTextColumn Header="Категория:" Binding="{Binding Hotel.Name}"/>
-                <DataGridTextColumn Header="Количество мест:" />
-                <DataGridTextColumn Header="Статус:"/>
+                <DataGridTextColumn Header="Количество мест:" Binding="{Binding NumberSeats}"/>
+                <DataGridTextColumn Header="Статус:" Binding="{Binding Category.Name}"/>
             </DataGrid.Columns>
         </DataGrid>
 
