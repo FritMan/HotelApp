@@ -33,7 +33,7 @@ namespace HotelWpfApp.Pages
 
         private void RoomsBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new RoomsPage());
         }
 
         private void BronirovanieBtn_Click(object sender, RoutedEventArgs e)

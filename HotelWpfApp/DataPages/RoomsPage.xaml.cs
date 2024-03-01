@@ -49,7 +49,7 @@ namespace HotelWpfApp.DataPages
             Db.Bookings.Load();
             Db.Hotels.Load();
             Db.Categories.Load();
-
+            RoomsGrid.ItemsSource = Db.Rooms.ToList();
         }
     }
 }
