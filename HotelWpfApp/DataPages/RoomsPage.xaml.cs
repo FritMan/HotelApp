@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static HotelWpfApp.Classes.Helper;
 
 namespace HotelWpfApp.DataPages
 {
@@ -23,6 +25,7 @@ namespace HotelWpfApp.DataPages
         public RoomsPage()
         {
             InitializeComponent();
+            LoadData();
         }
 
         private void AddRoomBtn_Click(object sender, RoutedEventArgs e)
@@ -37,6 +40,13 @@ namespace HotelWpfApp.DataPages
 
         private void DeleteRoomBtn_Click(object sender, RoutedEventArgs e)
         {
+
+        }
+
+        void LoadData()
+        {
+            Db.Rooms.Load();
+            Db.Bookings.Load();
 
         }
     }
