@@ -47,6 +47,8 @@ namespace HotelWpfApp.DataPages
         {
             Db.Rooms.Load();
             Db.Bookings.Load();
+            Db.Hotels.Load();
+            Db.Categories.Load();
 
         }
     }
