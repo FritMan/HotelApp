@@ -50,12 +50,20 @@ namespace HotelWpfApp.PagesEdit
 
         private void OkBtn_Click_1(object sender, RoutedEventArgs e)
         {
-            if(_id == -1)
+            if(NameTb.Text.Length <= 150)
             {
-                Db.Hotels.Add(StackEdit.DataContext as Hotel);
+
+                if (_id == -1)
+                {
+                    Db.Hotels.Add(StackEdit.DataContext as Hotel);
+                }
+                Db.SaveChanges();
+                NavigationService.Navigate(new DataHotel());
             }
-            Db.SaveChanges();
-            NavigationService.Navigate(new DataHotel());
+            else
+            {
+                MessageBox.Show("Длина не должна быть больше 150 символов", "Ограничение", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
