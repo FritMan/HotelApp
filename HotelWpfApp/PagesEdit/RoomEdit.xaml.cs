@@ -36,32 +36,38 @@ namespace HotelWpfApp.PagesEdit
 
         private void OkBtn_Click(object sender, RoutedEventArgs e)
         {
-
-            if (((CategoryCb.SelectedItem as Category).Id == 2 || (CategoryCb.SelectedItem as Category).Id == 3) && (NumberTb.Text == "1" || NumberTb.Text == "2"))
+            if (NameTb.Text.Length <= 10)
             {
-                var create_room = RoomsGrid.DataContext as Room;
-
-                if (_id == -1)
+                if (((CategoryCb.SelectedItem as Category).Id == 2 || (CategoryCb.SelectedItem as Category).Id == 3) && (NumberTb.Text == "1" || NumberTb.Text == "2"))
                 {
-                    Db.Rooms.Add(create_room);
-                }
-                Db.SaveChanges();
-                NavigationService.Navigate(new RoomsPage());
-            }
-            else if((CategoryCb.SelectedItem as Category).Id == 1 && (NumberTb.Text == "1" || NumberTb.Text == "2" || NumberTb.Text == "3" || NumberTb.Text == "4"))
-            {
-                var create_room = RoomsGrid.DataContext as Room;
+                    var create_room = RoomsGrid.DataContext as Room;
 
-                if (_id == -1)
-                {
-                    Db.Rooms.Add(create_room);
+                    if (_id == -1)
+                    {
+                        Db.Rooms.Add(create_room);
+                    }
+                    Db.SaveChanges();
+                    NavigationService.Navigate(new RoomsPage());
                 }
-                Db.SaveChanges();
-                NavigationService.Navigate(new RoomsPage());
+                else if ((CategoryCb.SelectedItem as Category).Id == 1 && (NumberTb.Text == "1" || NumberTb.Text == "2" || NumberTb.Text == "3" || NumberTb.Text == "4"))
+                {
+                    var create_room = RoomsGrid.DataContext as Room;
+
+                    if (_id == -1)
+                    {
+                        Db.Rooms.Add(create_room);
+                    }
+                    Db.SaveChanges();
+                    NavigationService.Navigate(new RoomsPage());
+                }
+                else
+                {
+                    MessageBox.Show("Бфло превышено количество мест", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
             else
-            { 
-                MessageBox.Show("LB YF[EQ", "Ошибка", MessageBoxButton.OK);
+            {
+                MessageBox.Show("Длина не должна быть больше 10 символов", "Ограничение", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
