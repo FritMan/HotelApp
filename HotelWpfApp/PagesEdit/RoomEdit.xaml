@@ -1,0 +1,37 @@
+﻿<Page x:Class="HotelWpfApp.PagesEdit.RoomEdit"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HotelWpfApp.PagesEdit"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RoomEdit">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Название:" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="1"/>
+        <TextBox x:Name="NameTb" Width="100" Height="30" Grid.Column="1" HorizontalAlignment="Left"
+                 VerticalAlignment="Center" Grid.Row="1"/>
+        
+        <Label Content="Название отеля:" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="2"/>
+        <ComboBox x:Name="HotelName" Width="100" Height="30" Grid.Column="1" HorizontalAlignment="Left"
+                 VerticalAlignment="Center" Grid.Row="2" DisplayMemberPath="Category"/>
+
+        <Label Content="Категория:" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="3"/>
+        <ComboBox x:Name="Category" Width="100" Height="30" Grid.Column="1" HorizontalAlignment="Left"
+                 VerticalAlignment="Center" Grid.Row="3" DisplayMemberPath="Category"/>
+
+        <Button x:Name="OkBtn" Content="Ок" Click="OkBtn_Click"/>
+    </Grid>
+</Page>
