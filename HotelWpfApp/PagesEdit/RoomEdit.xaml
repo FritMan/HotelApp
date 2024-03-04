@@ -8,29 +8,34 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="RoomEdit">
 
-    <Grid>
+    <Grid x:Name="RoomsGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Label Content="Название:" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="1"/>
         <TextBox x:Name="NameTb" Width="100" Height="30" Grid.Column="1" HorizontalAlignment="Left"
-                 VerticalAlignment="Center" Grid.Row="1"/>
+                 VerticalAlignment="Center" Grid.Row="1" Text="{Binding Name}"/>
         
         <Label Content="Название отеля:" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="2"/>
-        <ComboBox x:Name="HotelName" Width="100" Height="30" Grid.Column="1" HorizontalAlignment="Left"
-                 VerticalAlignment="Center" Grid.Row="2" DisplayMemberPath="Category"/>
+        <ComboBox x:Name="HotelCb" Width="100" Height="30" Grid.Column="1" HorizontalAlignment="Left"
+                 VerticalAlignment="Center" Grid.Row="2" DisplayMemberPath="Name" SelectedItem="{Binding Hotel}"/>
 
         <Label Content="Категория:" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="3"/>
-        <ComboBox x:Name="Category" Width="100" Height="30" Grid.Column="1" HorizontalAlignment="Left"
-                 VerticalAlignment="Center" Grid.Row="3" DisplayMemberPath="Category"/>
+        <ComboBox x:Name="CategoryCb" Width="100" Height="30" Grid.Column="1" HorizontalAlignment="Left"
+                 VerticalAlignment="Center" Grid.Row="3" DisplayMemberPath="Name" SelectedItem="{Binding Category}"/>
+
+        <Label Content="Количество мест:" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="4"/>
+        <TextBox x:Name="NumberTb" Width="100" Height="30" Grid.Column="1" HorizontalAlignment="Left"
+                 VerticalAlignment="Center" Grid.Row="4" Text="{Binding NumberSeats}"/>
 
         <Button x:Name="OkBtn" Content="Ок" Click="OkBtn_Click"/>
     </Grid>

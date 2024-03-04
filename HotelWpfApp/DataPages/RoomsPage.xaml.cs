@@ -40,7 +40,7 @@ namespace HotelWpfApp.DataPages
             var selectedRoom = RoomsGrid.SelectedItem as Room;
             if (selectedRoom != null)
             {
-
+                NavigationService.Navigate(new RoomEdit(selectedRoom.Id));
             }
             else
             {
@@ -54,7 +54,12 @@ namespace HotelWpfApp.DataPages
 
             if (selectedRoom != null)
             {
-                MessageBox.Show("Удалить?", "Удаление", MessageBoxButton.YesNo);
+                if (MessageBox.Show("Удалить?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    Db.Rooms.Remove(selectedRoom);
+                    Db.SaveChanges();
+                }
+                LoadData();
             }
             else
             {
