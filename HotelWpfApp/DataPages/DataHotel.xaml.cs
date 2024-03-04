@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using HotelWpfApp.Models;
+using HotelWpfApp.PagesEdit;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,17 +39,40 @@ namespace HotelWpfApp.DataPages
 
         private void AddHotelBtn_Click(object sender, RoutedEventArgs e)
         {
-            
+            NavigationService.Navigate(new EditHotel(-1));
         }
 
         private void EditHotelBtn_Click(object sender, RoutedEventArgs e)
         {
+            var selected_hotel = HotelGrid.SelectedItem as Hotel;
 
+            if (selected_hotel != null)
+            {
+                NavigationService.Navigate(new EditHotel(selected_hotel.Id));
+            }
+            else
+            {
+                MessageBox.Show("Выберите отель", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void DeleteHotelBtn_Click(object sender, RoutedEventArgs e)
         {
+            var selected_hotel = HotelGrid.SelectedItem as Hotel;
 
+            if (selected_hotel != null)
+            {
+                if (MessageBox.Show("Удалить?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    Db.Hotels.Remove(selected_hotel);
+                    Db.SaveChanges();
+                }
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Выберите отель", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

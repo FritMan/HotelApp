@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static HotelWpfApp.Classes.Helper;
 
 namespace HotelWpfApp
 {
@@ -40,7 +41,7 @@ namespace HotelWpfApp
 
         private void MainFrame_Navigated(object sender, NavigationEventArgs e)
         {
-
+            RefreshData();
         }
     }
 }

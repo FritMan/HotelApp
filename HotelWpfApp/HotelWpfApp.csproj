@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Folder Include="PartClasses\" />
-    <Folder Include="PagesEdit\" />
   </ItemGroup>
 
   <ItemGroup>
