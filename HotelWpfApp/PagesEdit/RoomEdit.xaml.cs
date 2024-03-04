@@ -60,7 +60,7 @@ namespace HotelWpfApp.PagesEdit
                 NavigationService.Navigate(new RoomsPage());
             }
             else
-            {
+            { 
                 MessageBox.Show("LB YF[EQ", "Ошибка", MessageBoxButton.OK);
             }
         }
