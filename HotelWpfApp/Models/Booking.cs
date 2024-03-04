@@ -9,9 +9,9 @@ public partial class Booking
 
     public long RoomId { get; set; }
 
-    public byte[] DateStart { get; set; } = null!;
+    public DateTime DateStart { get; set; }
 
-    public byte[] DateEnd { get; set; } = null!;
+    public DateTime DateEnd { get; set; }
 
     public virtual Room Room { get; set; } = null!;
 }
