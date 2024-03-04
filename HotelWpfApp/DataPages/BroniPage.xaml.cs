@@ -25,12 +25,6 @@ namespace HotelWpfApp.DataPages
             InitializeComponent();
         }
 
-
-
-
-
-        
-
         private void AddBroniBtn_Click(object sender, RoutedEventArgs e)
         {
 
